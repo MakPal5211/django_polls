@@ -1,3 +1,18 @@
-from django.shortcuts import render
+from rest_framework import generics
+from rest_framework import viewsets
+from rest_framework.decorators import action
+from rest_framework.response import Response
+from rest_framework import permissions
 
-# Create your views here.
+from .models import MaterialGeneral
+from .rest.serializers import MaterialGeneralSerializer
+
+
+class MaterialGeneralList(generics.ListCreateAPIView):
+    queryset = MaterialGeneral.objects.all()
+    serializer_class = MaterialGeneralSerializer
+
+
+class MaterialGeneralDetail(generics.RetrieveUpdateDestroyAPIView):
+    queryset = MaterialGeneral.objects.all()
+    serializer_class = MaterialGeneralSerializer

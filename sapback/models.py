@@ -8,7 +8,7 @@ class MaterialGeneral(models.Model):
     lastchangedate = models.TimeField(verbose_name='Date of last change', max_length=6)
     lastchangedby = models.CharField(verbose_name='Name of person who changed the object', max_length=12)
     maintenacestatus = models.CharField(verbose_name='Maintenance Status', max_length=15)
-    materialnumber = models.CharField(verbose_name='Material Number', max_length=40)
+    materialnumber = models.CharField(verbose_name='Material Number', max_length=40, primary_key=True)
     materialdelind = models.CharField(verbose_name='Material Deletion at the client level', max_length=1)
     materialtype = models.CharField(verbose_name='Material Type', max_length=4)
     baseuom = models.CharField(verbose_name='Base Unit of Measure', max_length=3)

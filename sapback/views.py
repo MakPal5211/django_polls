@@ -8,11 +8,7 @@ from .models import MaterialGeneral
 from .rest.serializers import MaterialGeneralSerializer
 
 
-class MaterialGeneralList(generics.ListCreateAPIView):
+class MaterialGeneralList(viewsets.ModelViewSet):
     queryset = MaterialGeneral.objects.all()
     serializer_class = MaterialGeneralSerializer
 
-
-class MaterialGeneralDetail(generics.RetrieveUpdateDestroyAPIView):
-    queryset = MaterialGeneral.objects.all()
-    serializer_class = MaterialGeneralSerializer

@@ -1,9 +1,8 @@
 from django.urls import path, include
 from rest_framework import routers
-from .views import MaterialGeneralList, MaterialGeneralDetail
+from .views import MaterialGeneralList
 
-router = routers.DefaultRouter()
-router.register(r'material-general', MaterialGeneralList, basename='material-general')
-router.register(r'material-general/(?P<pk>\d+)', MaterialGeneralDetail, basename='material-general-detail')
+router_viewsets = routers.DefaultRouter()
+router_viewsets.register(r'material-general', MaterialGeneralList, basename='material-general')
 
-urlpatterns = router.urls
+urlpatterns = router_viewsets.urls
